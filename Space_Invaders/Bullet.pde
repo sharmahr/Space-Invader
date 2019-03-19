@@ -6,7 +6,7 @@ class Bullet{
   boolean isalive = true;
 
   
-  Bullet(int x){
+  Bullet(float x){
     position = new PVector(x,height - 70);
     speed = new PVector(0,3);
     c = color(255,255,0);

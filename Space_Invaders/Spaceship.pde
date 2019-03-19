@@ -4,7 +4,7 @@ Minim minim = new Minim(this);
 
 class Spaceship{
   
-  int posX;
+  float posX;
   PImage spaceship;
   int shipwidth = 70;
   int shipheight = 70;
@@ -26,17 +26,8 @@ class Spaceship{
   }
 
   void display(){
-    
-    if(mouseX > width){
-      posX = width -  (shipwidth/2);
-    }else if (mouseX < 0){
-      posX =  (shipwidth/2);
-    }  else{
-      posX = mouseX - (shipwidth/2);
-    }
-    
-   //display image of the ship
-  image(spaceship,posX,height - shipheight);
+    //display image of the ship
+ image(spaceship,posX,height - shipheight);
 
   for(Bullet b: bullets){
     b.move();
@@ -51,6 +42,16 @@ class Spaceship{
     }
   }
 
-}
+  }
+  
+  void spaceshipPos(float positionX){
+      if(positionX > width){
+      posX = width -  (shipwidth/2);
+    }else if (positionX < 0){
+      posX =  (shipwidth/2);
+    }  else{
+      posX = positionX - (shipwidth/2);
+    }
+  }
 
 }
